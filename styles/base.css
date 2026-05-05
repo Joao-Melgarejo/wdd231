@@ -38,33 +38,41 @@ header span {
 }
 
 .hamburger.show::before {
-  content: "\00D7";
+  content: "\00d7";
 }
 
-nav {
+.navigation {
   display: none;
   background-color: #333;
 }
 
-nav.show {
+.navigation.show {
   display: block;
 }
 
-nav ul {
+.navigation ul {
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-nav a {
+.navigation a {
   display: block;
   padding: 1rem;
   color: white;
+  text-align: center;
   text-decoration: none;
+  min-height: 44px;
+  box-sizing: border-box;
 }
 
-nav a:hover {
+.navigation a:hover {
   background-color: #555;
+}
+
+.navigation .current a {
+  background-color: #111;
+  font-weight: 700;
 }
 
 main {
@@ -80,12 +88,16 @@ main {
     display: none;
   }
 
-  nav {
+  .navigation {
     display: block;
   }
 
-  nav ul {
+  .navigation ul {
     display: flex;
     justify-content: center;
+  }
+
+  .navigation li {
+    flex: 1 1 auto;
   }
 }
