@@ -1,0 +1,40 @@
+@media screen and (min-width: 768px) {
+  header {
+    grid-template-columns: 44px auto;
+  }
+
+  .hamburger {
+    display: none;
+  }
+
+  .navigation {
+    display: block;
+  }
+
+  .navigation ul {
+    display: flex;
+    justify-content: center;
+  }
+
+  .navigation li {
+    flex: 1 1 auto;
+  }
+
+  .main-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 1rem;
+  }
+
+  .course-section {
+    grid-column: 1 / 3;
+  }
+
+  .filter-buttons {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .course-cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

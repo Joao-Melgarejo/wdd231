@@ -4,10 +4,10 @@ const navBar = document.querySelector("#nav-bar");
 navButton.addEventListener("click", () => {
   navButton.classList.toggle("show");
   navBar.classList.toggle("show");
+
+  const isOpen = navButton.classList.contains("show");
+  navButton.setAttribute(
+    "aria-label",
+    isOpen ? "Close navigation menu" : "Open navigation menu",
+  );
 });
-
-const currentYear = document.querySelector("#current-year");
-const lastModified = document.querySelector("#last-modified");
-
-currentYear.textContent = new Date().getFullYear();
-lastModified.textContent = `Last Modified: ${document.lastModified}`;

@@ -3,69 +3,120 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>WDD 231 Course Home</title>
+    <meta
+      name="description"
+      content="WDD 231 course home page for Joao Melgarejo. This page includes personal information, course links, completed courses, and social media links."
+    />
+    <meta name="author" content="Joao Melgarejo" />
+
+    <title>WDD 231 Course Home | Joao Melgarejo</title>
+
     <link rel="stylesheet" href="styles/normalize.css" />
-    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/small.css" />
+    <link rel="stylesheet" href="styles/larger.css" />
+
     <script src="scripts/navigation.js" defer></script>
+    <script src="scripts/date.js" defer></script>
+    <script src="scripts/course.js" defer></script>
   </head>
 
   <body>
     <header>
-      <img src="images/logo.svg" alt="site logo" width="1" height="1" />
+      <img
+        src="images/logo.svg"
+        alt="Joao Melgarejo site logo"
+        width="1"
+        height="1"
+      />
       <span>Joao Melgarejo</span>
       <button
         id="nav-button"
         class="hamburger"
-        aria-label="navigation"
+        aria-label="Open navigation menu"
       ></button>
     </header>
 
     <nav id="nav-bar" class="navigation">
       <ul>
         <li class="current"><a href="index.html">Home</a></li>
-        <li><a href="#">Chamber</a></li>
-        <li><a href="#">Final Project</a></li>
+        <li><a href="chamber/index.html">Chamber</a></li>
+        <li><a href="final/index.html">Final Project</a></li>
       </ul>
     </nav>
 
     <main>
-      <h1>WDD 231 Course Home</h1>
-      <p>Welcome to my course home page.</p>
+      <h1>Home</h1>
+
+      <div class="main-grid">
+        <section class="card about-me">
+          <h2>About Me</h2>
+          <p>
+            My name is Joao Melgarejo. I am an Industrial Engineer from Peru and
+            I am currently developing stronger skills in software development,
+            data analytics, and data science. My professional goal is to combine
+            engineering, statistics, programming, and business analysis to build
+            useful data-driven solutions.
+          </p>
+        </section>
+
+        <section class="card student-photo">
+          <h2>Student Photo</h2>
+          <img
+            src="images/profile.svg"
+            alt="Profile image for Joao Melgarejo"
+            width="300"
+            height="300"
+          />
+        </section>
+
+        <section class="card course-section">
+          <h2>Web Certificate Courses</h2>
+
+          <div class="filter-buttons">
+            <button id="all" type="button">All</button>
+            <button id="cse" type="button">CSE</button>
+            <button id="wdd" type="button">WDD</button>
+          </div>
+
+          <div id="course-cards" class="course-cards"></div>
+
+          <p id="total-credits" class="credits"></p>
+        </section>
+      </div>
     </main>
 
     <footer>
       <div class="social">
-        <a href="https://github.com/Joao-Melgarejo" target="_blank">
-          <img
-            src="images/github.svg"
-            alt="GitHub icon"
-            width="32"
-            height="32"
-          />
+        <a
+          href="https://github.com/Joao-Melgarejo/wdd231"
+          target="_blank"
+          rel="noopener"
+          aria-label="GitHub repository"
+        >
+          <img src="images/github.svg" alt="" width="32" height="32" />
         </a>
-        <a href="https://www.linkedin.com/" target="_blank">
-          <img
-            src="images/linkedin.svg"
-            alt="LinkedIn icon"
-            width="32"
-            height="32"
-          />
+
+        <a
+          href="https://www.linkedin.com/in/j-melgarejo/"
+          target="_blank"
+          rel="noopener"
+          aria-label="LinkedIn profile"
+        >
+          <img src="images/linkedin.svg" alt="" width="32" height="32" />
         </a>
+
         <a
           href="https://www.microsoft.com/en-us/microsoft-teams/group-chat-software"
           target="_blank"
+          rel="noopener"
+          aria-label="Microsoft Teams"
         >
-          <img
-            src="images/teams.svg"
-            alt="Microsoft Teams icon"
-            width="32"
-            height="32"
-          />
+          <img src="images/teams.svg" alt="" width="32" height="32" />
         </a>
       </div>
 
-      <p>&copy; <span id="current-year"></span> Joao Melgarejo | Peru</p>
-      <p id="last-modified"></p>
+      <p>&copy; <span id="currentyear"></span> • Joao Melgarejo • Peru</p>
+      <p id="lastModified"></p>
     </footer>
   </body>
 </html>
