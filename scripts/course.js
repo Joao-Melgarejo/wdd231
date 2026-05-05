@@ -47,8 +47,8 @@ const courseCards = document.querySelector("#course-cards");
 const totalCredits = document.querySelector("#total-credits");
 
 const allButton = document.querySelector("#all");
-const cseButton = document.querySelector("#cse");
 const wddButton = document.querySelector("#wdd");
+const cseButton = document.querySelector("#cse");
 
 function displayCourses(courseList) {
   courseCards.innerHTML = "";
@@ -59,9 +59,11 @@ function displayCourses(courseList) {
 
     if (course.completed) {
       courseCard.classList.add("completed");
+      courseCard.innerHTML = `✓ ${course.subject} ${course.number}`;
+    } else {
+      courseCard.textContent = `${course.subject} ${course.number}`;
     }
 
-    courseCard.textContent = `${course.subject} ${course.number} - ${course.title}`;
     courseCards.appendChild(courseCard);
   });
 
@@ -69,16 +71,11 @@ function displayCourses(courseList) {
     (total, course) => total + course.credits,
     0,
   );
-  totalCredits.textContent = `The total credits for courses listed above is ${credits}`;
+  totalCredits.textContent = `The total credits for courses listed below is ${credits}`;
 }
 
 allButton.addEventListener("click", () => {
   displayCourses(courses);
-});
-
-cseButton.addEventListener("click", () => {
-  const cseCourses = courses.filter((course) => course.subject === "CSE");
-  displayCourses(cseCourses);
 });
 
 wddButton.addEventListener("click", () => {
@@ -86,5 +83,9 @@ wddButton.addEventListener("click", () => {
   displayCourses(wddCourses);
 });
 
+cseButton.addEventListener("click", () => {
+  const cseCourses = courses.filter((course) => course.subject === "CSE");
+  displayCourses(cseCourses);
+});
+
 displayCourses(courses);
-*
