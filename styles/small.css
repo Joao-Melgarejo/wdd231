@@ -1,12 +1,12 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap");
-
 :root {
   --primary-color: #0f4c81;
   --secondary-color: #1f2937;
   --accent-color: #dbeafe;
   --light-color: #f8fafc;
   --dark-color: #111827;
-  --completed-color: #c7f9cc;
+  --completed-color: #f4f1de;
+  --incomplete-color: #e76f51;
+  --hover-color: #f4a261;
   --border-color: #d1d5db;
 }
 
@@ -62,6 +62,7 @@ header span {
 .navigation {
   display: none;
   background-color: var(--secondary-color);
+  color: white;
 }
 
 .navigation.show {
@@ -89,7 +90,7 @@ header span {
 }
 
 .navigation .current a {
-  background-color: #000;
+  background-color: #000000;
 }
 
 main {
@@ -148,14 +149,14 @@ h1 {
   min-height: 44px;
   border: 1px solid var(--secondary-color);
   border-radius: 0.5rem;
-  background-color: #e76f51;
+  background-color: var(--incomplete-color);
   color: var(--dark-color);
   font-weight: 700;
   cursor: pointer;
 }
 
 .filter-buttons button:hover {
-  background-color: #f4a261;
+  background-color: var(--hover-color);
 }
 
 .credits {
@@ -175,14 +176,15 @@ h1 {
   padding: 1rem;
   border: 1px solid var(--border-color);
   border-radius: 0.75rem;
-  background-color: #e76f51;
+  background-color: var(--incomplete-color);
+  color: var(--dark-color);
   text-align: center;
   font-weight: 700;
 }
 
 .course-card.completed {
-  background-color: #f4f1de;
-  border-color: #d1d5db;
+  background-color: var(--completed-color);
+  border-color: var(--border-color);
 }
 
 footer {
