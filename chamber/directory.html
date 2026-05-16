@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Business directory for the Puerto Inca Chamber of Commerce featuring local businesses, services, and organizations."
+    />
+    <meta name="author" content="Joao Melgarejo" />
+
+    <title>Directory | Puerto Inca Chamber of Commerce</title>
+
+    <meta
+      property="og:title"
+      content="Puerto Inca Chamber of Commerce Directory"
+    />
+    <meta
+      property="og:description"
+      content="Explore local businesses, services, and organizations that support economic growth in Puerto Inca."
+    />
+    <meta
+      property="og:image"
+      content="https://joao-melgarejo.github.io/wdd231/chamber/images/logo.svg"
+    />
+    <meta
+      property="og:url"
+      content="https://joao-melgarejo.github.io/wdd231/chamber/directory.html"
+    />
+
+    <link rel="icon" href="images/favicon.ico" />
+    <link rel="stylesheet" href="styles/normalize.css" />
+    <link rel="stylesheet" href="styles/small.css" />
+    <link rel="stylesheet" href="styles/larger.css" />
+
+    <script src="scripts/directory.js" defer></script>
+  </head>
+
+  <body>
+    <header>
+      <div class="brand">
+        <img
+          src="images/logo.svg"
+          alt="Puerto Inca Chamber logo"
+          width="44"
+          height="44"
+        />
+        <span>Puerto Inca Chamber of Commerce</span>
+      </div>
+
+      <button id="menu-button" aria-label="Open navigation menu"></button>
+
+      <nav id="navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a class="active" href="directory.html">Directory</a></li>
+          <li><a href="join.html">Join</a></li>
+          <li><a href="discover.html">Discover</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <h1>Business Directory</h1>
+
+      <section class="intro">
+        <h2>Local Business Members</h2>
+        <p>
+          Explore local businesses and organizations that support the economic
+          growth, services, and community development of Puerto Inca.
+        </p>
+      </section>
+
+      <section class="view-options" aria-label="Directory view options">
+        <h2>Directory View</h2>
+        <div class="view-buttons">
+          <button id="grid-view" type="button">Grid</button>
+          <button id="list-view" type="button">List</button>
+        </div>
+      </section>
+
+      <section aria-label="Chamber member directory">
+        <div id="members" class="grid"></div>
+      </section>
+    </main>
+
+    <footer>
+      <div>
+        <p><strong>Puerto Inca Chamber of Commerce</strong></p>
+        <p>Puerto Inca, Huánuco, Peru</p>
+        <p>info@puertoincachamber.org</p>
+        <p>+51 962 555 100</p>
+      </div>
+
+      <div>
+        <p>WDD 231 Class Project</p>
+        <p>Joao Melgarejo</p>
+        <p>
+          &copy; <span id="currentyear"></span> Puerto Inca Chamber of Commerce
+        </p>
+        <p id="lastModified"></p>
+      </div>
+    </footer>
+  </body>
+</html>

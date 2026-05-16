@@ -1,0 +1,65 @@
+[
+  {
+    "name": "Puerto Inca Market",
+    "address": "Av. Principal 120, Puerto Inca",
+    "phone": "+51 962 555 101",
+    "website": "https://example.com/puerto-inca-market",
+    "image": "market.webp",
+    "membershipLevel": 3,
+    "category": "Retail"
+  },
+  {
+    "name": "Amazonía Lodge",
+    "address": "Jr. Río Pachitea 455, Puerto Inca",
+    "phone": "+51 962 555 102",
+    "website": "https://example.com/amazonia-lodge",
+    "image": "lodge.webp",
+    "membershipLevel": 2,
+    "category": "Hospitality"
+  },
+  {
+    "name": "Selva Verde Restaurant",
+    "address": "Calle Comercio 215, Puerto Inca",
+    "phone": "+51 962 555 103",
+    "website": "https://example.com/selva-verde",
+    "image": "restaurant.webp",
+    "membershipLevel": 3,
+    "category": "Food Service"
+  },
+  {
+    "name": "Pachitea Transport Services",
+    "address": "Av. Transporte 88, Puerto Inca",
+    "phone": "+51 962 555 104",
+    "website": "https://example.com/pachitea-transport",
+    "image": "transport.webp",
+    "membershipLevel": 2,
+    "category": "Transportation"
+  },
+  {
+    "name": "Inca Digital Solutions",
+    "address": "Jr. Tecnología 310, Puerto Inca",
+    "phone": "+51 962 555 105",
+    "website": "https://example.com/inca-digital",
+    "image": "digital.webp",
+    "membershipLevel": 3,
+    "category": "Technology"
+  },
+  {
+    "name": "Huánuco Agro Supply",
+    "address": "Carretera Central Km 8, Puerto Inca",
+    "phone": "+51 962 555 106",
+    "website": "https://example.com/huanuco-agro",
+    "image": "agro.webp",
+    "membershipLevel": 1,
+    "category": "Agriculture"
+  },
+  {
+    "name": "Puerto Inca Health Center",
+    "address": "Av. Salud 75, Puerto Inca",
+    "phone": "+51 962 555 107",
+    "website": "https://example.com/puerto-inca-health",
+    "image": "health.webp",
+    "membershipLevel": 1,
+    "category": "Health"
+  }
+]
