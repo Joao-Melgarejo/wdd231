@@ -202,7 +202,7 @@ button,
 }
 
 /**
- * Remove the inner border and padding in Firefox.
+ * Remove the inner border and paddi1ng in Firefox.
  */
 
 button::-moz-focus-inner,
