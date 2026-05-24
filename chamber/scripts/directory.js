@@ -80,7 +80,7 @@ const displayMembers = (members) => {
     membership.textContent = `Membership Level: ${
       membershipLevels[member.membershipLevel]
     }`;
-    description.textContent = member.description;
+    description.textContent = member.description ?? "";
 
     website.setAttribute("href", member.website);
     website.setAttribute("target", "_blank");

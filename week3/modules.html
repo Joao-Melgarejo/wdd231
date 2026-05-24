@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="WDD 231 JavaScript ES Modules practice activity."
+    />
+    <meta name="author" content="Joao Melgarejo" />
+
+    <title>WDD 231 | JavaScript ES Modules</title>
+
+    <link rel="icon" href="../favicon.ico" />
+    <link rel="stylesheet" href="styles/modules.css" />
+
+    <script type="module" src="scripts/modules.mjs"></script>
+  </head>
+  <body>
+    <header>
+      <h1>JavaScript ES Modules</h1>
+    </header>
+
+    <main>
+      <section class="course-card">
+        <h2 id="course-title">Course Title</h2>
+
+        <div class="controls">
+          <label for="sectionNumber">Choose a section:</label>
+          <select id="sectionNumber"></select>
+
+          <button id="enrollStudent" type="button">Enroll Student</button>
+          <button id="dropStudent" type="button">Drop Student</button>
+        </div>
+
+        <h3>Course Sections</h3>
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">Section</th>
+              <th scope="col">Instructor</th>
+              <th scope="col">Enrollment</th>
+              <th scope="col">Room</th>
+            </tr>
+          </thead>
+          <tbody id="sections"></tbody>
+        </table>
+      </section>
+    </main>
+
+    <footer>
+      <p>
+        &copy; <span id="currentyear"></span> | WDD 231 | ES Modules Practice
+      </p>
+    </footer>
+  </body>
+</html>

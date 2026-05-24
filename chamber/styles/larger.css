@@ -62,3 +62,35 @@
     text-align: right;
   }
 }
+
+@media screen and (min-width: 768px) {
+  .hero {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .hero img {
+    height: 420px;
+  }
+
+  .hero-content {
+    position: absolute;
+    left: 2rem;
+    bottom: 2rem;
+    max-width: 520px;
+    border-radius: 0.75rem;
+    background-color: rgb(31 41 55 / 88%);
+  }
+
+  .home-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .forecast-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .spotlights-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
