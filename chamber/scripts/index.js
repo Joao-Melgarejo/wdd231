@@ -5,7 +5,7 @@ const lastModified = document.querySelector("#lastModified");
 
 const currentTemp = document.querySelector("#current-temp");
 const weatherDescription = document.querySelector("#weather-description");
-const weatherIcon = document.querySelector("#weather-icon");
+const weatherIconContainer = document.querySelector("#weather-icon-container");
 const forecastContainer = document.querySelector("#forecast");
 const spotlightsContainer = document.querySelector("#spotlights");
 
@@ -17,7 +17,7 @@ const membershipLevels = {
   3: "Gold",
 };
 
-const apiKey = "";
+const apiKey = "bb37fdb104122b08768492cc5d0d951e";
 const latitude = -9.38;
 const longitude = -74.97;
 
@@ -79,8 +79,15 @@ function displayCurrentWeather(data) {
   currentTemp.innerHTML = `${temperature}&deg;C`;
   weatherDescription.textContent = capitalizeWords(description);
 
+  weatherIconContainer.innerHTML = "";
+
+  const weatherIcon = document.createElement("img");
   weatherIcon.setAttribute("src", iconUrl);
   weatherIcon.setAttribute("alt", capitalizeWords(description));
+  weatherIcon.setAttribute("width", "80");
+  weatherIcon.setAttribute("height", "80");
+
+  weatherIconContainer.appendChild(weatherIcon);
 }
 
 function displayForecast(forecastList) {
