@@ -17,7 +17,7 @@ const membershipLevels = {
   3: "Gold",
 };
 
-const apiKey = "YOUR_OPENWEATHER_API_KEY";
+const apiKey = "";
 const latitude = -9.38;
 const longitude = -74.97;
 
