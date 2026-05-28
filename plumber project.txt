@@ -1,0 +1,5 @@
+For my individual website project, i will create a website for a local plumbing service called "The Master", also known locally as Gasfitero Fernando. This business provides plumbing services for local customers, including repairs, installations, maintenance, and general home plumbing support.
+
+The website will be an informational three-page site. It will present the business, explain the main services offered, show Fernando’s experience, and provide a clear contact information, so customers could quickly request a service. This site may also include a service request or contact form, dynamic service cards, images, and useful business information for people who need plumbing help.
+
+So, i choose this subject because it's connected to a real project I want to build for my father’s business. Since the business is real, the website has a clear purpose and real users. This project will help me practice the course outcomes while also creating something useful outside the class. It will allow me to work with valid HTML and everything that is required.
