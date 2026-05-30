@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="CSS animations and transitions practice page for WDD 231 Week 04."
+    />
+    <meta name="author" content="Joao Melgarejo" />
+
+    <title>WDD 231 | CSS Animations and Transitions</title>
+
+    <style>
+      :root {
+        --primary-color: #0f4c81;
+        --secondary-color: #1f2937;
+        --accent-color: #e76f51;
+        --light-color: #f8fafc;
+        --dark-color: #111827;
+        --border-color: #d1d5db;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: var(--light-color);
+        color: var(--dark-color);
+      }
+
+      header,
+      footer {
+        padding: 1rem;
+        background-color: var(--primary-color);
+        color: white;
+        text-align: center;
+      }
+
+      main {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 1rem;
+      }
+
+      h1,
+      h2 {
+        color: var(--primary-color);
+      }
+
+      .card {
+        margin-bottom: 1.5rem;
+        padding: 1.5rem;
+        border: 1px solid var(--border-color);
+        border-radius: 0.75rem;
+        background-color: white;
+        box-shadow: 0 2px 8px rgb(0 0 0 / 10%);
+      }
+
+      .demo-area {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 180px;
+        margin-top: 1rem;
+        border: 2px dashed var(--border-color);
+        border-radius: 0.75rem;
+        background-color: #ffffff;
+      }
+
+      #loader {
+        position: relative;
+        width: 70px;
+        height: 70px;
+        border: 6px solid transparent;
+        border-color: #999 transparent #999 transparent;
+        border-radius: 50%;
+        box-shadow: 0 0 1rem rgb(15 76 129 / 40%);
+        animation: spin 1.5s linear infinite;
+      }
+
+      #loader::after {
+        content: "⚙️";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        font-size: 1.8rem;
+        transform: translate(-50%, -50%);
+        animation: pulse 1.5s ease-in-out infinite;
+      }
+
+      @keyframes spin {
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      @keyframes pulse {
+        0%,
+        100% {
+          transform: translate(-50%, -50%) scale(1);
+        }
+
+        50% {
+          transform: translate(-50%, -50%) scale(1.25);
+        }
+      }
+
+      .loader-t {
+        position: relative;
+        width: 70px;
+        height: 70px;
+        border: 6px solid transparent;
+        border-color: var(--accent-color) transparent var(--accent-color)
+          transparent;
+        border-radius: 50%;
+        box-shadow: 0 0 1rem rgb(231 111 81 / 40%);
+        transition: transform 1.5s ease-in-out;
+        cursor: pointer;
+      }
+
+      .loader-t::after {
+        content: "⚙️";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        font-size: 1.8rem;
+        transform: translate(-50%, -50%) scale(0);
+        transition: transform 1.5s ease-in-out;
+      }
+
+      .loader-t:hover {
+        transform: rotate(360deg);
+      }
+
+      .loader-t:hover::after {
+        transform: translate(-50%, -50%) scale(1.5);
+      }
+
+      .note {
+        font-weight: 700;
+        color: var(--secondary-color);
+      }
+
+      footer p {
+        margin: 0;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <h1>CSS Animations and Transitions</h1>
+      <p>WDD 231 - Week 04 Practice</p>
+    </header>
+
+    <main>
+      <section class="card">
+        <h2>1. Loading Animation with @keyframes</h2>
+        <p>
+          This example uses <strong>@keyframes</strong>,
+          <strong>animation</strong>, and <strong>transform</strong> to create a
+          continuous loading animation.
+        </p>
+
+        <div class="demo-area">
+          <div id="loader" aria-label="Loading animation"></div>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>2. Hover Effect with Transition</h2>
+        <p>
+          This example uses the <strong>transition</strong> property. The effect
+          starts when the user hovers over the loader.
+        </p>
+        <p class="note">Hover over the circle to activate the transition.</p>
+
+        <div class="demo-area">
+          <div class="loader-t" aria-label="Hover transition loader"></div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2026 Joao Melgarejo | WDD 231</p>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Temple appointment confirmation page for WDD 231 Week 04 advanced forms practice."
+    />
+    <meta name="author" content="Joao Melgarejo" />
+
+    <title>WDD 231 | Temple Appointment Details</title>
+
+    <style>
+      :root {
+        --primary-color: #3d405b;
+        --accent-color: #e07a5f;
+        --soft-color: #f4f1de;
+        --text-color: #1f2937;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: #f8fafc;
+        color: var(--text-color);
+      }
+
+      main {
+        max-width: 720px;
+        margin: 0 auto;
+        padding: 1rem;
+      }
+
+      h1 {
+        color: var(--primary-color);
+      }
+
+      #results {
+        padding: 1rem;
+        border: 1px solid var(--accent-color);
+        border-radius: 0.5rem;
+        background-color: var(--soft-color);
+        line-height: 1.6;
+      }
+
+      #results p {
+        margin: 0 0 0.75rem;
+      }
+
+      #results p:last-child {
+        margin-bottom: 0;
+      }
+
+      a {
+        color: var(--primary-color);
+        font-weight: 700;
+      }
+    </style>
+  </head>
+
+  <body>
+    <main>
+      <h1>Temple Appointment Details</h1>
+
+      <div id="results"></div>
+    </main>
+
+    <script src="scripts/form-confirmation.js"></script>
+  </body>
+</html>

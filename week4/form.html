@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Temple appointment form for WDD 231 Week 04 advanced forms practice."
+    />
+    <meta name="author" content="Joao Melgarejo" />
+
+    <title>WDD 231 | Temple Appointment Form</title>
+
+    <style>
+      :root {
+        --primary-color: #3d405b;
+        --accent-color: #e07a5f;
+        --surface-color: #ffffff;
+        --soft-color: #f4f1de;
+        --text-color: #1f2937;
+        --border-color: #d1d5db;
+        --valid-color: #287233;
+        --invalid-color: #d70000;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: #f8fafc;
+        color: var(--text-color);
+      }
+
+      main {
+        max-width: 720px;
+        margin: 0 auto;
+        padding: 1rem;
+      }
+
+      h1 {
+        color: var(--primary-color);
+      }
+
+      form {
+        padding: 1rem;
+        border: 1px solid var(--border-color);
+        border-radius: 0.5rem;
+        background-color: var(--surface-color);
+      }
+
+      label {
+        display: block;
+        padding-top: 0.35rem;
+        color: var(--primary-color);
+        font-size: 0.9rem;
+        font-weight: 700;
+      }
+
+      h2 {
+        margin: 1.5rem 0 0.35rem;
+        padding-bottom: 0.25rem;
+        border-bottom: 1px solid var(--border-color);
+        color: var(--accent-color);
+        font-size: 1rem;
+      }
+
+      input[type="text"],
+      input[type="tel"],
+      input[type="date"],
+      input[type="email"],
+      select {
+        display: block;
+        width: min(100%, 18rem);
+        margin: 0.2rem 0 1rem;
+        padding: 0.55rem;
+        border: 1px solid #999;
+        border-left: 5px solid #555;
+        border-radius: 4px;
+        color: var(--primary-color);
+        font-size: 1rem;
+      }
+
+      input:required,
+      select:required {
+        border-left-color: var(--invalid-color);
+      }
+
+      input:focus,
+      select:focus {
+        border-left-color: #000000;
+        outline: none;
+      }
+
+      input:required:valid,
+      select:required:valid {
+        border-left-color: var(--valid-color);
+      }
+
+      .radio-label {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        width: fit-content;
+        padding: 0.35rem 0;
+        color: var(--text-color);
+        font-weight: 400;
+      }
+
+      input[type="submit"] {
+        min-height: 44px;
+        margin-top: 1.5rem;
+        padding: 0.8rem 1.5rem;
+        border: none;
+        border-radius: 1rem;
+        background-color: var(--primary-color);
+        color: white;
+        font-size: 1rem;
+        font-weight: 700;
+        cursor: pointer;
+        appearance: none;
+      }
+
+      input[type="submit"]:hover {
+        background-color: #2c2f45;
+      }
+    </style>
+  </head>
+
+  <body>
+    <main>
+      <h1>Temple Appointment</h1>
+
+      <form method="get" action="thankyou.html">
+        <label>
+          First Name
+          <input
+            type="text"
+            name="first"
+            required
+            autocomplete="given-name"
+            title="Your First Name"
+          />
+        </label>
+
+        <label>
+          Last Name
+          <input
+            type="text"
+            name="last"
+            required
+            autocomplete="family-name"
+            title="Your Last Name"
+          />
+        </label>
+
+        <label>
+          Cell Phone
+          <input
+            type="tel"
+            name="phone"
+            autocomplete="tel"
+            title="A Phone Number with dashes"
+            placeholder="987-555-1234"
+          />
+        </label>
+
+        <label>
+          Email
+          <input
+            type="email"
+            name="email"
+            required
+            autocomplete="email"
+            title="Your Email"
+            placeholder="john89@gmail.com"
+          />
+        </label>
+
+        <h2>Select Ordinance</h2>
+        <label class="radio-label">
+          <input type="radio" name="ordinance" value="Baptism" checked />
+          Proxy Baptism
+        </label>
+        <label class="radio-label">
+          <input type="radio" name="ordinance" value="Initiatory" />
+          Proxy Initiatory
+        </label>
+        <label class="radio-label">
+          <input type="radio" name="ordinance" value="Endowment" />
+          Proxy Endowment
+        </label>
+        <label class="radio-label">
+          <input type="radio" name="ordinance" value="Sealing" />
+          Proxy Sealing
+        </label>
+
+        <h2>Date and Location</h2>
+        <label>
+          Date
+          <input type="date" name="date" required />
+        </label>
+
+        <label>
+          Location
+          <select name="location" required>
+            <option value="">None</option>
+            <option value="Payson">Payson</option>
+            <option value="Orem">Orem</option>
+            <option value="Provo City Center">Provo City Center</option>
+          </select>
+        </label>
+
+        <input type="submit" value="Schedule An Appointment" />
+      </form>
+    </main>
+  </body>
+</html>
