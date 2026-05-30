@@ -392,3 +392,221 @@ footer p {
   color: var(--primary-color);
   font-weight: 700;
 }
+
+/* Join Page */
+
+.join-intro,
+.form-section,
+.membership-levels,
+.thankyou-card {
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  border: 1px solid var(--border-color, #d1d5db);
+  border-radius: 0.75rem;
+  background-color: #ffffff;
+}
+
+.join-intro h2,
+.form-section h2,
+.membership-levels h2,
+.thankyou-card h2 {
+  margin-top: 0;
+  color: var(--primary-color, #0f4c81);
+}
+
+.join-layout {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.membership-form {
+  display: grid;
+  gap: 1rem;
+}
+
+.membership-form label {
+  display: grid;
+  gap: 0.35rem;
+  color: var(--secondary-color, #1f2937);
+  font-weight: 700;
+}
+
+.membership-form input,
+.membership-form textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid var(--border-color, #d1d5db);
+  border-radius: 0.5rem;
+  color: var(--dark-color, #111827);
+  font: inherit;
+}
+
+.membership-form input:focus,
+.membership-form textarea:focus {
+  outline: 3px solid rgb(15 76 129 / 25%);
+  border-color: var(--primary-color, #0f4c81);
+}
+
+.membership-form input:required {
+  border-left: 5px solid #b91c1c;
+}
+
+.membership-form input:required:valid {
+  border-left-color: #166534;
+}
+
+.membership-form fieldset {
+  display: grid;
+  gap: 0.75rem;
+  margin: 0;
+  padding: 1rem;
+  border: 1px solid var(--border-color, #d1d5db);
+  border-radius: 0.5rem;
+}
+
+.membership-form legend {
+  padding: 0 0.35rem;
+  color: var(--primary-color, #0f4c81);
+  font-weight: 700;
+}
+
+.radio-option {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  font-weight: 400;
+}
+
+.radio-option input {
+  width: auto;
+  margin-top: 0.15rem;
+}
+
+.membership-form input[type="submit"] {
+  min-height: 44px;
+  border: none;
+  background-color: var(--primary-color, #0f4c81);
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.membership-form input[type="submit"]:hover {
+  background-color: var(--secondary-color, #1f2937);
+}
+
+.membership-cards {
+  display: grid;
+  gap: 1rem;
+}
+
+.membership-card {
+  padding: 1rem;
+  border: 1px solid var(--border-color, #d1d5db);
+  border-radius: 0.75rem;
+  background-color: #ffffff;
+  box-shadow: 0 2px 8px rgb(0 0 0 / 10%);
+  opacity: 0;
+  transform: translateY(20px);
+  animation: membership-card-entry 0.8s ease-out forwards;
+}
+
+.membership-card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.membership-card:nth-child(2) {
+  animation-delay: 0.25s;
+}
+
+.membership-card:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+.membership-card:nth-child(4) {
+  animation-delay: 0.55s;
+}
+
+.membership-card h3 {
+  margin-top: 0;
+  color: var(--primary-color, #0f4c81);
+}
+
+.membership-card a {
+  display: inline-block;
+  min-height: 44px;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  background-color: var(--primary-color, #0f4c81);
+  color: white;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.membership-card a:hover {
+  background-color: var(--secondary-color, #1f2937);
+}
+
+@keyframes membership-card-entry {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.membership-modal {
+  width: min(90%, 520px);
+  border: none;
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  box-shadow: 0 0 24px rgb(0 0 0 / 35%);
+}
+
+.membership-modal::backdrop {
+  background-color: rgb(0 0 0 / 60%);
+}
+
+.membership-modal h2 {
+  margin-top: 0;
+  color: var(--primary-color, #0f4c81);
+}
+
+.membership-modal li {
+  margin-bottom: 0.5rem;
+}
+
+.close-modal {
+  display: block;
+  margin-left: auto;
+  border: none;
+  background: none;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+
+.application-results {
+  margin: 1rem 0;
+  padding: 1rem;
+  border-left: 5px solid var(--primary-color, #0f4c81);
+  background-color: #f8fafc;
+}
+
+.application-results dl {
+  display: grid;
+  gap: 0.35rem;
+  margin: 0;
+}
+
+.application-results dt {
+  color: var(--primary-color, #0f4c81);
+  font-weight: 700;
+}
+
+.application-results dd {
+  margin: 0 0 0.75rem;
+}

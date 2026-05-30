@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Join the Puerto Inca Chamber of Commerce by submitting a membership application form."
+    />
+    <meta name="author" content="Joao Melgarejo" />
+
+    <title>Join | Puerto Inca Chamber of Commerce</title>
+
+    <meta
+      property="og:title"
+      content="Join the Puerto Inca Chamber of Commerce"
+    />
+    <meta
+      property="og:description"
+      content="Apply for a Puerto Inca Chamber of Commerce membership and connect with local businesses and community opportunities."
+    />
+    <meta
+      property="og:image"
+      content="https://joao-melgarejo.github.io/wdd231/chamber/images/logo.svg"
+    />
+    <meta
+      property="og:url"
+      content="https://joao-melgarejo.github.io/wdd231/chamber/join.html"
+    />
+
+    <link rel="icon" href="images/favicon.ico" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="styles/normalize.css" />
+    <link rel="stylesheet" href="styles/small.css" />
+    <link rel="stylesheet" href="styles/larger.css" />
+
+    <script src="scripts/join.js" defer></script>
+  </head>
+
+  <body>
+    <header>
+      <div class="brand">
+        <img
+          src="images/logo.svg"
+          alt="Puerto Inca Chamber logo"
+          width="44"
+          height="44"
+        />
+        <span>Puerto Inca Chamber of Commerce</span>
+      </div>
+
+      <button id="menu-button" aria-label="Open navigation menu"></button>
+
+      <nav id="navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="directory.html">Directory</a></li>
+          <li><a class="active" href="join.html">Join</a></li>
+          <li><a href="discover.html">Discover</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <h1>Join the Chamber</h1>
+
+      <section class="join-intro">
+        <h2>Membership Application</h2>
+        <p>
+          Complete the form below to apply for membership in the Puerto Inca
+          Chamber of Commerce. Membership connects your organization with local
+          business opportunities, training, events, and community visibility.
+        </p>
+      </section>
+
+      <div class="join-layout">
+        <section class="form-section">
+          <h2>Application Form</h2>
+
+          <form method="get" action="thankyou.html" class="membership-form">
+            <label>
+              First Name
+              <input
+                type="text"
+                id="first-name"
+                name="first-name"
+                title="Applicant's first name"
+                autocomplete="given-name"
+                required
+              />
+            </label>
+
+            <label>
+              Last Name
+              <input
+                type="text"
+                id="last-name"
+                name="last-name"
+                title="Applicant's last name"
+                autocomplete="family-name"
+                required
+              />
+            </label>
+
+            <label>
+              Organizational Title
+              <input
+                type="text"
+                id="organization-title"
+                name="organization-title"
+                title="Applicant's organizational title. Use at least seven letters, spaces, or hyphens."
+                autocomplete="organization-title"
+                pattern="[A-Za-z\s-]{7,}"
+                placeholder="Business Manager"
+              />
+            </label>
+
+            <label>
+              Email Address
+              <input
+                type="email"
+                id="email"
+                name="email"
+                title="Applicant's email address"
+                autocomplete="email"
+                placeholder="name@example.com"
+                required
+              />
+            </label>
+
+            <label>
+              Mobile Phone Number
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                title="Applicant's mobile phone number"
+                autocomplete="tel"
+                required
+              />
+            </label>
+
+            <label>
+              Business or Organization Name
+              <input
+                type="text"
+                id="organization"
+                name="organization"
+                title="Business or organization name"
+                autocomplete="organization"
+                required
+              />
+            </label>
+
+            <fieldset>
+              <legend>Membership Level</legend>
+
+              <label class="radio-option">
+                <input
+                  type="radio"
+                  name="membership-level"
+                  value="np"
+                  checked
+                />
+                NP Membership - Nonprofit organizations, no fee
+              </label>
+
+              <label class="radio-option">
+                <input type="radio" name="membership-level" value="bronze" />
+                Bronze Membership
+              </label>
+
+              <label class="radio-option">
+                <input type="radio" name="membership-level" value="silver" />
+                Silver Membership
+              </label>
+
+              <label class="radio-option">
+                <input type="radio" name="membership-level" value="gold" />
+                Gold Membership
+              </label>
+            </fieldset>
+
+            <label>
+              Business or Organization Description
+              <textarea
+                id="description"
+                name="description"
+                title="Brief description of the business or organization"
+                rows="5"
+              ></textarea>
+            </label>
+
+            <input type="hidden" id="timestamp" name="timestamp" />
+
+            <input type="submit" value="Apply for Membership" />
+          </form>
+        </section>
+
+        <section class="membership-levels">
+          <h2>Membership Levels</h2>
+
+          <div class="membership-cards">
+            <article class="membership-card np-card">
+              <h3>NP Membership</h3>
+              <p>For nonprofit organizations. No membership fee.</p>
+              <a href="#np-modal" data-modal="np-modal">Learn More</a>
+            </article>
+
+            <article class="membership-card bronze-card">
+              <h3>Bronze Membership</h3>
+              <p>Entry-level support for small businesses and startups.</p>
+              <a href="#bronze-modal" data-modal="bronze-modal">Learn More</a>
+            </article>
+
+            <article class="membership-card silver-card">
+              <h3>Silver Membership</h3>
+              <p>
+                Expanded visibility and event benefits for growing businesses.
+              </p>
+              <a href="#silver-modal" data-modal="silver-modal">Learn More</a>
+            </article>
+
+            <article class="membership-card gold-card">
+              <h3>Gold Membership</h3>
+              <p>Premium benefits for high-visibility chamber members.</p>
+              <a href="#gold-modal" data-modal="gold-modal">Learn More</a>
+            </article>
+          </div>
+        </section>
+      </div>
+
+      <dialog id="np-modal" class="membership-modal" aria-labelledby="np-title">
+        <button class="close-modal" type="button" aria-label="Close modal">
+          ❌
+        </button>
+        <h2 id="np-title">NP Membership Benefits</h2>
+        <ul>
+          <li>No annual membership fee</li>
+          <li>Directory listing for nonprofit organizations</li>
+          <li>Access to selected community networking events</li>
+          <li>Opportunities to collaborate with local businesses</li>
+        </ul>
+      </dialog>
+
+      <dialog
+        id="bronze-modal"
+        class="membership-modal"
+        aria-labelledby="bronze-title"
+      >
+        <button class="close-modal" type="button" aria-label="Close modal">
+          ❌
+        </button>
+        <h2 id="bronze-title">Bronze Membership Benefits</h2>
+        <ul>
+          <li>Business directory listing</li>
+          <li>Access to chamber networking events</li>
+          <li>Basic training opportunities</li>
+          <li>Community promotion opportunities</li>
+        </ul>
+      </dialog>
+
+      <dialog
+        id="silver-modal"
+        class="membership-modal"
+        aria-labelledby="silver-title"
+      >
+        <button class="close-modal" type="button" aria-label="Close modal">
+          ❌
+        </button>
+        <h2 id="silver-title">Silver Membership Benefits</h2>
+        <ul>
+          <li>All Bronze benefits</li>
+          <li>Event discounts</li>
+          <li>Priority business training invitations</li>
+          <li>Additional business promotion opportunities</li>
+        </ul>
+      </dialog>
+
+      <dialog
+        id="gold-modal"
+        class="membership-modal"
+        aria-labelledby="gold-title"
+      >
+        <button class="close-modal" type="button" aria-label="Close modal">
+          ❌
+        </button>
+        <h2 id="gold-title">Gold Membership Benefits</h2>
+        <ul>
+          <li>All Silver benefits</li>
+          <li>Premium spotlight opportunities on the home page</li>
+          <li>Featured promotion at chamber events</li>
+          <li>Highest visibility in chamber business initiatives</li>
+        </ul>
+      </dialog>
+    </main>
+
+    <footer>
+      <div>
+        <p><strong>Puerto Inca Chamber of Commerce</strong></p>
+        <p>Puerto Inca, Huánuco, Peru</p>
+        <p>info@puertoincachamber.org</p>
+        <p>+51 962 555 100</p>
+      </div>
+
+      <div>
+        <p>WDD 231 Class Project</p>
+        <p>Joao Melgarejo</p>
+        <p>
+          &copy; <span id="currentyear"></span> Puerto Inca Chamber of Commerce
+        </p>
+        <p id="lastModified"></p>
+      </div>
+    </footer>
+  </body>
+</html>
