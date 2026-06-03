@@ -1,0 +1,272 @@
+:root {
+  --primary-color: #0f3d5e;
+  --accent-color: #1c9bd1;
+  --light-color: #f4f8fb;
+  --dark-color: #1f2933;
+  --white: #ffffff;
+  --border-color: #d7e2ea;
+  --shadow: 0 8px 24px rgb(15 61 94 / 12%);
+  --heading-font: "Roboto Slab", Georgia, serif;
+  --body-font: "Inter", Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--body-font);
+  color: var(--dark-color);
+  background-color: var(--light-color);
+  line-height: 1.6;
+}
+
+header {
+  background-color: var(--primary-color);
+  color: var(--white);
+  padding: 1.25rem;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.logo-mark {
+  display: grid;
+  place-items: center;
+  width: 56px;
+  height: 56px;
+  border: 3px solid var(--accent-color);
+  border-radius: 50%;
+  font-family: var(--heading-font);
+  font-weight: 700;
+  font-size: 1.2rem;
+  background-color: var(--white);
+  color: var(--primary-color);
+}
+
+.site-title,
+.tagline {
+  display: block;
+}
+
+.site-title {
+  font-family: var(--heading-font);
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.tagline {
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1.5rem 1rem 3rem;
+}
+
+section {
+  margin: 1.5rem 0;
+  padding: 1.25rem;
+  background-color: var(--white);
+  border: 1px solid var(--border-color);
+  border-radius: 14px;
+  box-shadow: var(--shadow);
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--heading-font);
+  color: var(--primary-color);
+  line-height: 1.2;
+}
+
+h1 {
+  margin-top: 0.5rem;
+  font-size: clamp(2rem, 5vw, 3rem);
+}
+
+h2 {
+  border-left: 6px solid var(--accent-color);
+  padding-left: 0.75rem;
+  margin-top: 0;
+}
+
+a {
+  color: var(--accent-color);
+}
+
+ul,
+ol {
+  padding-left: 1.5rem;
+}
+
+li {
+  margin-bottom: 0.55rem;
+}
+
+.color-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.color-card {
+  padding: 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  background-color: var(--light-color);
+}
+
+.color-sample {
+  display: block;
+  width: 100%;
+  height: 64px;
+  border-radius: 10px;
+  margin-bottom: 0.75rem;
+  border: 1px solid rgb(0 0 0 / 15%);
+}
+
+.primary .color-sample {
+  background-color: var(--primary-color);
+}
+
+.accent .color-sample {
+  background-color: var(--accent-color);
+}
+
+.light .color-sample {
+  background-color: var(--light-color);
+}
+
+.dark .color-sample {
+  background-color: var(--dark-color);
+}
+
+.type-example {
+  padding: 1rem;
+  border-left: 5px solid var(--accent-color);
+  background-color: var(--light-color);
+  margin-bottom: 1rem;
+  border-radius: 10px;
+}
+
+.heading-font h3,
+.heading-font p {
+  font-family: var(--heading-font);
+}
+
+.body-font h3,
+.body-font p {
+  font-family: var(--body-font);
+}
+
+.wireframe {
+  display: grid;
+  gap: 0.75rem;
+  padding: 1rem;
+  margin-bottom: 2rem;
+  border: 2px dashed var(--primary-color);
+  border-radius: 14px;
+  background-color: var(--light-color);
+}
+
+.wire-box {
+  min-height: 54px;
+  display: grid;
+  place-items: center;
+  padding: 0.75rem;
+  text-align: center;
+  color: var(--primary-color);
+  background-color: var(--white);
+  border: 2px solid var(--accent-color);
+  border-radius: 10px;
+  font-weight: 700;
+}
+
+.hero {
+  min-height: 140px;
+}
+
+.desktop-wireframe {
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-areas:
+    "header header header header"
+    "hero hero hero hero"
+    "intro intro services services"
+    "trust trust contact contact"
+    "footer footer footer footer";
+}
+
+.header-box {
+  grid-area: header;
+}
+
+.hero-box {
+  grid-area: hero;
+  min-height: 180px;
+}
+
+.intro-box {
+  grid-area: intro;
+  min-height: 130px;
+}
+
+.services-box {
+  grid-area: services;
+  min-height: 130px;
+}
+
+.trust-box {
+  grid-area: trust;
+  min-height: 120px;
+}
+
+.contact-box {
+  grid-area: contact;
+  min-height: 120px;
+}
+
+.footer-box {
+  grid-area: footer;
+}
+
+footer {
+  padding: 1.25rem;
+  text-align: center;
+  color: var(--white);
+  background-color: var(--primary-color);
+}
+
+footer p {
+  margin: 0;
+}
+
+@media screen and (min-width: 700px) {
+  header {
+    padding: 1.5rem;
+  }
+
+  main {
+    padding: 2rem 1.5rem 4rem;
+  }
+
+  .color-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .brand {
+    gap: 1.25rem;
+  }
+
+  .site-title {
+    font-size: 1.7rem;
+  }
+}
