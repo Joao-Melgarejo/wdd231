@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Discover Puerto Inca attractions, services, local features, and visitor information from the Puerto Inca Chamber of Commerce."
+    />
+    <meta name="author" content="Joao Melgarejo" />
+
+    <title>Discover | Puerto Inca Chamber of Commerce</title>
+
+    <meta
+      property="og:title"
+      content="Discover Puerto Inca | Puerto Inca Chamber of Commerce"
+    />
+    <meta
+      property="og:description"
+      content="Explore places, services, and community features that make Puerto Inca a strong place to visit and do business."
+    />
+    <meta
+      property="og:image"
+      content="https://joao-melgarejo.github.io/wdd231/chamber/images/logo.svg"
+    />
+    <meta
+      property="og:url"
+      content="https://joao-melgarejo.github.io/wdd231/chamber/discover.html"
+    />
+
+    <link rel="icon" href="images/favicon.ico" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="styles/normalize.css" />
+    <link rel="stylesheet" href="styles/small.css" />
+    <link rel="stylesheet" href="styles/larger.css" />
+
+    <script type="module" src="scripts/discover.js"></script>
+  </head>
+
+  <body>
+    <header>
+      <div class="brand">
+        <img
+          src="images/logo.svg"
+          alt="Puerto Inca Chamber logo"
+          width="44"
+          height="44"
+        />
+        <span>Puerto Inca Chamber of Commerce</span>
+      </div>
+
+      <button id="menu-button" aria-label="Open navigation menu"></button>
+
+      <nav id="navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="directory.html">Directory</a></li>
+          <li><a href="join.html">Join</a></li>
+          <li><a class="active" href="discover.html">Discover</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <h1>Discover Puerto Inca</h1>
+
+      <section class="discover-intro">
+        <h2>Community Highlights</h2>
+        <p>
+          Puerto Inca connects agriculture, river access, local services,
+          hospitality, and small business activity. Explore eight places and
+          features that represent the community for visitors and prospective
+          chamber members.
+        </p>
+        <p id="visit-message" class="visit-message"></p>
+      </section>
+
+      <section aria-label="Puerto Inca places of interest">
+        <div id="discover-grid" class="discover-grid"></div>
+      </section>
+    </main>
+
+    <footer>
+      <div>
+        <p><strong>Puerto Inca Chamber of Commerce</strong></p>
+        <p>Puerto Inca, Huanuco, Peru</p>
+        <p>info@puertoincachamber.org</p>
+        <p>+51 962 555 100</p>
+      </div>
+
+      <div>
+        <p>WDD 231 Class Project</p>
+        <p>Joao Melgarejo</p>
+        <p>
+          &copy; <span id="currentyear"></span> Puerto Inca Chamber of Commerce
+        </p>
+        <p id="lastModified"></p>
+      </div>
+    </footer>
+  </body>
+</html>

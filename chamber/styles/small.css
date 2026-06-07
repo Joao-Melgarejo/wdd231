@@ -610,3 +610,143 @@ footer p {
 .application-results dd {
   margin: 0 0 0.75rem;
 }
+
+/* Discover Page */
+
+.discover-intro {
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  border: 1px solid var(--border-color, #d1d5db);
+  border-radius: 0.75rem;
+  background-color: #ffffff;
+}
+
+.discover-intro h2 {
+  margin-top: 0;
+  color: var(--primary-color, #0f4c81);
+}
+
+.discover-intro p {
+  line-height: 1.6;
+}
+
+.visit-message {
+  padding: 0.85rem 1rem;
+  border-left: 5px solid var(--accent-color, #f4a261);
+  border-radius: 0.35rem;
+  background-color: #fff7ed;
+  color: var(--secondary-color, #1f2937);
+  font-weight: 700;
+}
+
+.discover-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-areas:
+    "card1"
+    "card2"
+    "card3"
+    "card4"
+    "card5"
+    "card6"
+    "card7"
+    "card8";
+}
+
+.discover-card {
+  display: grid;
+  gap: 0.75rem;
+  align-content: start;
+  padding: 1rem;
+  border: 1px solid var(--border-color, #d1d5db);
+  border-radius: 0.75rem;
+  background-color: #ffffff;
+  box-shadow: 0 2px 8px rgb(0 0 0 / 10%);
+}
+
+.discover-card:nth-child(1) {
+  grid-area: card1;
+}
+
+.discover-card:nth-child(2) {
+  grid-area: card2;
+}
+
+.discover-card:nth-child(3) {
+  grid-area: card3;
+}
+
+.discover-card:nth-child(4) {
+  grid-area: card4;
+}
+
+.discover-card:nth-child(5) {
+  grid-area: card5;
+}
+
+.discover-card:nth-child(6) {
+  grid-area: card6;
+}
+
+.discover-card:nth-child(7) {
+  grid-area: card7;
+}
+
+.discover-card:nth-child(8) {
+  grid-area: card8;
+}
+
+.discover-card h2 {
+  margin: 0;
+  color: var(--primary-color, #0f4c81);
+  font-size: 1.2rem;
+  line-height: 1.25;
+}
+
+.discover-card figure {
+  margin: 0;
+  overflow: hidden;
+  border-radius: 0.5rem;
+  background-color: var(--background-color, #f8fafc);
+}
+
+.discover-card img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+}
+
+.discover-card address {
+  color: var(--secondary-color, #1f2937);
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.discover-card p {
+  margin: 0;
+  line-height: 1.55;
+}
+
+.discover-detail {
+  color: var(--muted-color, #475569);
+}
+
+.discover-card button {
+  justify-self: start;
+  min-height: 44px;
+  padding: 0.75rem 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  background-color: var(--primary-color, #0f4c81);
+  color: #ffffff;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.discover-card button:hover,
+.discover-card button:focus {
+  background-color: var(--secondary-color, #1f2937);
+}

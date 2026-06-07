@@ -104,3 +104,37 @@
     grid-template-columns: 1fr;
   }
 }
+
+@media screen and (min-width: 641px) {
+  .discover-grid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "card1 card2"
+      "card3 card4"
+      "card5 card6"
+      "card7 card8";
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .discover-card img {
+    transition:
+      filter 0.3s ease,
+      transform 0.3s ease;
+  }
+
+  .discover-card figure:hover img {
+    filter: saturate(1.18) contrast(1.08);
+    transform: scale(1.04);
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  .discover-grid {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas:
+      "card1 card1 card2 card3"
+      "card4 card5 card5 card5"
+      "card6 card7 card8 card8";
+  }
+}
