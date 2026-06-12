@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Servicios de Gasfiteria | The Master Fernando</title>
+    <meta
+      name="description"
+      content="Conoce los servicios de Gasfiteria The Master Fernando: fugas, griferias, bombas de agua, tanques, duchas, trampas de grasa y emergencias."
+    />
+    <meta name="author" content="Joao Melgarejo" />
+    <meta property="og:title" content="Servicios de Gasfiteria The Master Fernando" />
+    <meta
+      property="og:description"
+      content="Lista dinamica de servicios de plomeria para reparaciones, instalaciones, mantenimiento y emergencias."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="images/optimized/og-image.webp" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" href="images/optimized/favicon.png" type="image/png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&family=Roboto+Slab:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles/styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Saltar al contenido principal</a>
+    <header class="site-header">
+      <nav class="nav wrap" aria-label="Navegacion principal">
+        <a class="brand" href="index.html">
+          <img src="images/optimized/logo-master.webp" alt="Logo de Gasfiteria The Master" width="260" height="260" />
+          <span>
+            <strong>Gasfiteria The Master</strong>
+            <span>Fernando, el rey de las tuberias</span>
+          </span>
+        </a>
+        <button class="nav-toggle" type="button" aria-label="Abrir menu" aria-controls="primary-nav" aria-expanded="false">
+          <span class="hamburger" aria-hidden="true"></span>
+        </button>
+        <ul class="nav-links" id="primary-nav">
+          <li><a class="nav-link" href="index.html">Inicio</a></li>
+          <li><a class="nav-link" href="services.html">Servicios</a></li>
+          <li><a class="nav-link" href="contact.html">Contacto</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main id="main-content">
+      <section class="hero hero--compact" aria-labelledby="services-title">
+        <div class="wrap">
+          <div class="hero-content">
+            <p class="eyebrow">Catalogo de servicios</p>
+            <h1 id="services-title">Elige el servicio que necesitas.</h1>
+            <p class="lead">
+              Filtra por categoria, busca por palabra clave y abre cada tarjeta para ver detalles antes de solicitar una
+              visita.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section--white" aria-labelledby="list-title">
+        <div class="wrap">
+          <div class="section-heading">
+            <p class="eyebrow">Servicios dinamicos</p>
+            <h2 id="list-title">15 opciones para reparacion, instalacion y mantenimiento.</h2>
+            <p>
+              Las tarjetas se generan con JavaScript desde un archivo JSON local. Cada servicio muestra categoria,
+              respuesta, duracion, garantia y detalles adicionales.
+            </p>
+          </div>
+
+          <div class="filters" aria-label="Filtros de servicios">
+            <div class="field">
+              <label for="service-search">Buscar servicio</label>
+              <input id="service-search" type="search" placeholder="Ejemplo: fuga, tanque, ducha" autocomplete="off" />
+            </div>
+            <div class="field">
+              <label for="category-filter">Categoria</label>
+              <select id="category-filter"></select>
+            </div>
+            <p class="status" id="service-count" aria-live="polite">Cargando servicios...</p>
+          </div>
+
+          <p class="status" id="services-status" aria-live="polite"></p>
+          <div class="grid services-grid" id="services-grid"></div>
+        </div>
+      </section>
+    </main>
+
+    <dialog class="modal" id="service-dialog" aria-labelledby="dialog-title">
+      <div class="modal__inner">
+        <div class="modal__header">
+          <h2 id="dialog-title">Detalle del servicio</h2>
+          <button class="modal-close" type="button" aria-label="Cerrar detalle">X</button>
+        </div>
+        <div id="dialog-content"></div>
+      </div>
+    </dialog>
+
+    <footer class="site-footer">
+      <div class="wrap footer-grid">
+        <div class="footer-brand">
+          <strong>Gasfiteria The Master Fernando</strong>
+          <span>Servicio local de plomeria, instalaciones y mantenimiento.</span>
+        </div>
+        <div>
+          <nav class="footer-links" aria-label="Enlaces de pie de pagina">
+            <a href="attributions.html">Atribuciones</a>
+            <a href="siteplan.html">Site Plan</a>
+            <a href="attributions.html#video-demo">Video demo</a>
+          </nav>
+          <p class="footer-meta">
+            <span>&copy; <span id="currentyear"></span> Joao Melgarejo</span>
+            <span>Ultima modificacion: <span id="lastmodified"></span></span>
+          </p>
+        </div>
+      </div>
+    </footer>
+    <script type="module" src="scripts/site.js"></script>
+    <script type="module" src="scripts/services.js"></script>
+  </body>
+</html>
