@@ -29,6 +29,7 @@ body {
   font-family: var(--body-font);
   line-height: 1.6;
   background: var(--clean);
+  overflow-x: clip;
 }
 
 img {
@@ -94,16 +95,22 @@ textarea {
   display: flex;
   align-items: center;
   gap: 0.7rem;
+  min-width: 0;
   color: var(--surface);
   text-decoration: none;
 }
 
 .brand img {
-  width: 54px;
+  width: 48px;
+  flex-shrink: 0;
   aspect-ratio: 1;
   object-fit: contain;
   border-radius: 8px;
   background: var(--surface);
+}
+
+.brand > span {
+  min-width: 0;
 }
 
 .brand strong,
@@ -113,18 +120,21 @@ textarea {
 
 .brand strong {
   font-family: var(--heading-font);
-  font-size: 1rem;
+  font-size: clamp(0.9rem, 3.4vw, 1rem);
   line-height: 1.1;
+  overflow-wrap: break-word;
 }
 
 .brand span {
   color: rgb(255 255 255 / 78%);
-  font-size: 0.78rem;
+  font-size: clamp(0.7rem, 2.6vw, 0.78rem);
+  overflow-wrap: break-word;
 }
 
 .nav-toggle {
   display: inline-grid;
   place-items: center;
+  flex-shrink: 0;
   width: 44px;
   height: 44px;
   color: var(--surface);
