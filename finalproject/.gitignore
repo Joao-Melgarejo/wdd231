@@ -1,3 +1,5 @@
 images/*
 !images/optimized/
 !images/optimized/**
+release/
+__pycache__/

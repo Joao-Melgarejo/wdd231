@@ -1,5 +1,7 @@
 import { getServiceCategories, getServices } from "./data.js";
 
+const WHATSAPP_NUMBER = "51936872862";
+
 const grid = document.querySelector("#services-grid");
 const status = document.querySelector("#services-status");
 const count = document.querySelector("#service-count");
@@ -10,36 +12,39 @@ const dialogTitle = document.querySelector("#dialog-title");
 const dialogContent = document.querySelector("#dialog-content");
 
 let services = [];
-let favorites = JSON.parse(localStorage.getItem("favoriteServices") || "[]");
 
-function saveFavorites() {
-  localStorage.setItem("favoriteServices", JSON.stringify(favorites));
+function whatsappLink(service) {
+  const message = `Hola Fernando, necesito el servicio de ${service.name}.`;
+  return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
 }
 
 function updateCount(items) {
+  const plural = items.length === 1 ? "" : "s";
   if (count) {
-    count.textContent = `${items.length} servicio${items.length === 1 ? "" : "s"} encontrados`;
+    count.textContent = `${items.length} servicio${plural} encontrado${plural}`;
   }
+}
+
+function normalizeText(text) {
+  return text
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[̀-ͯ]/g, "");
 }
 
 function serviceMatches(service, selectedCategory, searchTerm) {
   const categoryMatches = selectedCategory === "Todos" || service.category === selectedCategory;
-  const searchableText = `${service.name} ${service.summary} ${service.idealFor}`.toLowerCase();
-  return categoryMatches && searchableText.includes(searchTerm);
+  const searchableText = normalizeText(`${service.name} ${service.summary} ${service.idealFor}`);
+  return categoryMatches && searchableText.includes(normalizeText(searchTerm));
 }
 
 function createServiceCard(service) {
-  const isFavorite = favorites.includes(service.id);
-
   return `
     <article class="service-card" id="service-${service.id}">
       <img src="${service.image}" alt="${service.imageAlt}" width="520" height="390" loading="lazy">
       <div class="service-card__body">
         <div class="card-meta">
           <span class="pill">${service.category}</span>
-          <button class="favorite-button" type="button" data-favorite="${service.id}" aria-pressed="${isFavorite}">
-            ${isFavorite ? "Guardado" : "Guardar"}
-          </button>
         </div>
         <h3>${service.name}</h3>
         <p>${service.summary}</p>
@@ -49,15 +54,18 @@ function createServiceCard(service) {
             <dd>${service.response}</dd>
           </div>
           <div>
-            <dt>Duracion</dt>
+            <dt>Duración</dt>
             <dd>${service.duration}</dd>
           </div>
           <div>
-            <dt>Garantia</dt>
+            <dt>Verificación</dt>
             <dd>${service.warranty}</dd>
           </div>
         </dl>
-        <button class="button button--small" type="button" data-service="${service.id}">Ver detalles</button>
+        <div class="hero-actions">
+          <button class="button button--small button--outline-navy" type="button" data-service="${service.id}">Ver detalles</button>
+          <a class="button button--small button--wa" href="${whatsappLink(service)}" target="_blank" rel="noopener">Solicitar</a>
+        </div>
       </div>
     </article>
   `;
@@ -78,7 +86,7 @@ function renderServices() {
 
   if (filteredServices.length === 0) {
     grid.innerHTML = `
-      <p class="notice">No encontramos servicios con esos filtros. Prueba con otra categoria o palabra clave.</p>
+      <p class="notice">No encontramos servicios con esos filtros. Prueba con otra categoría o palabra clave.</p>
     `;
     return;
   }
@@ -91,22 +99,13 @@ function openServiceDialog(serviceId) {
 
   if (!service || !dialog || !dialogTitle || !dialogContent) return;
 
-  localStorage.setItem(
-    "lastService",
-    JSON.stringify({
-      id: service.id,
-      name: service.name,
-      summary: service.summary,
-    }),
-  );
-
   dialogTitle.textContent = service.name;
   dialogContent.innerHTML = `
     <img src="${service.image}" alt="${service.imageAlt}" width="520" height="390" loading="lazy">
     <p>${service.details}</p>
     <dl class="dialog-facts">
       <div>
-        <dt>Categoria</dt>
+        <dt>Categoría</dt>
         <dd>${service.category}</dd>
       </div>
       <div>
@@ -122,7 +121,10 @@ function openServiceDialog(serviceId) {
         <dd>${service.response}</dd>
       </div>
     </dl>
-    <a class="button" href="contact.html?service=${service.id}">Solicitar este servicio</a>
+    <div class="hero-actions">
+      <a class="button button--wa" href="${whatsappLink(service)}" target="_blank" rel="noopener">Solicitar por WhatsApp</a>
+      <a class="text-link" href="contact.html?service=${service.id}">Usar el formulario</a>
+    </div>
   `;
 
   if (typeof dialog.showModal === "function") {
@@ -130,17 +132,6 @@ function openServiceDialog(serviceId) {
   } else {
     dialog.setAttribute("open", "");
   }
-}
-
-function toggleFavorite(serviceId) {
-  if (favorites.includes(serviceId)) {
-    favorites = favorites.filter((id) => id !== serviceId);
-  } else {
-    favorites = [...favorites, serviceId];
-  }
-
-  saveFavorites();
-  renderServices();
 }
 
 function populateCategories() {
@@ -153,14 +144,9 @@ function populateCategories() {
 
 function handleGridClick(event) {
   const serviceButton = event.target.closest("[data-service]");
-  const favoriteButton = event.target.closest("[data-favorite]");
 
   if (serviceButton) {
     openServiceDialog(serviceButton.dataset.service);
-  }
-
-  if (favoriteButton) {
-    toggleFavorite(favoriteButton.dataset.favorite);
   }
 }
 
@@ -168,7 +154,7 @@ function openRequestedService() {
   const serviceId = new URLSearchParams(window.location.search).get("service");
 
   if (serviceId) {
-    setTimeout(() => openServiceDialog(serviceId), 150);
+    openServiceDialog(serviceId);
   }
 }
 
@@ -179,15 +165,17 @@ async function initServicesPage() {
     services = await getServices();
     populateCategories();
     renderServices();
+    document.querySelector(".filters").hidden = false;
     openRequestedService();
 
     if (status) {
-      status.textContent = "Servicios cargados correctamente.";
+      status.textContent = "";
     }
   } catch (error) {
-    grid.innerHTML = `
-      <p class="notice">No se pudo cargar la lista de servicios. Revisa la conexion o intenta mas tarde.</p>
-    `;
+    if (count) {
+      count.textContent = "";
+    }
+    status.textContent = "Puedes consultar cualquier servicio con los enlaces de abajo. La búsqueda no está disponible en este momento.";
   }
 }
 
