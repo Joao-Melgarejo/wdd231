@@ -556,36 +556,89 @@ textarea {
 .clients-strip {
   background: var(--navy);
   color: #fff;
-  padding-block: 2.2rem;
+  padding-block: 3.5rem;
   text-align: center;
+  overflow: hidden;
 }
-
+.clients-heading { position: relative; margin-bottom: 2rem; }
 .clients-strip h2 {
   color: #fff;
-  font-size: 1.05rem;
+  font-size: clamp(.95rem, 2vw, 1.15rem);
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.12em;
-  margin-bottom: 1.2rem;
+  letter-spacing: .12em;
+  margin: 0 auto 1rem;
 }
-
+.clients-toggle {
+  border: 1px solid #ffffff70;
+  border-radius: 100px;
+  background: transparent;
+  color: #fff;
+  padding: .5rem 1rem;
+  min-height: 44px;
+  cursor: pointer;
+  font: inherit;
+  font-size: .8rem;
+}
+.clients-toggle:hover { background: #ffffff18; }
+.clients-marquee {
+  overflow: hidden;
+  max-width: 1440px;
+  margin-inline: auto;
+  mask-image: linear-gradient(to right, transparent, #000 4%, #000 96%, transparent);
+}
+.clients-track { display: flex; width: max-content; }
 .clients-list {
   list-style: none;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 0.7rem 1rem;
+  flex-shrink: 0;
+  gap: 1.5rem;
   margin: 0;
-  padding: 0;
+  padding: 0 1.5rem 0 0;
 }
-
-.clients-list li {
-  border: 1px solid rgb(255 255 255 / 30%);
-  border-radius: 100px;
-  padding: 0.4rem 1.1rem;
-  font-size: 0.85rem;
+.client-card {
+  width: 220px;
+  flex-shrink: 0;
   font-family: var(--heading-font);
-  font-weight: 500;
+  font-size: .85rem;
+  font-weight: 600;
+}
+.client-card > span { display: block; margin-top: 1rem; }
+.client-logo {
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  border: 1px solid #ffffff30;
+  border-radius: 12px;
+  overflow: hidden;
+}
+.client-logo > img { width: 160px; height: 90px; object-fit: contain; }
+.client-logo--kia { filter: brightness(0); }
+.client-logo--gaucho { background: #391a15; }
+.client-logo__crop { position: relative; overflow: hidden; width: 190px; height: 112px; }
+.client-logo__crop img { position: absolute; width: 310px; max-width: none; height: auto; left: -60px; top: -125px; }
+.client-logo--meraki { background: #111; }
+.client-logo--meraki > img { width: 150px; height: 150px; }
+.client-logo--placeholder { background: #edf4f8; color: #466780; }
+.client-logo svg { width: 80px; height: 64px; }
+.clients-strip.is-ready .clients-track { animation: clients-scroll 38s linear infinite; }
+.clients-strip.is-paused .clients-track,
+.clients-marquee:hover .clients-track { animation-play-state: paused; }
+@keyframes clients-scroll { to { transform: translateX(-50%); } }
+.clients-strip:not(.is-ready) .clients-marquee { overflow-x: auto; }
+@media (max-width: 700px) {
+  .clients-strip { padding-block: 2.75rem; }
+  .client-card { width: 180px; font-size: .78rem; }
+  .client-logo { height: 140px; }
+  .clients-list { gap: 1rem; padding-right: 1rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .clients-strip .clients-track { animation: none; width: auto; }
+  .clients-list { width: 100%; flex-wrap: wrap; justify-content: center; padding: 0 1rem; }
+  .clients-list[aria-hidden="true"], .clients-toggle { display: none; }
+  .clients-marquee { mask-image: none; }
 }
 
 /* ---------- Tarjetas de servicios ---------- */

@@ -269,16 +269,40 @@
       </section>
 
       <section class="clients-strip" aria-labelledby="clients-title">
-        <div class="wrap">
+        <div class="wrap clients-heading">
           <h2 id="clients-title">Empresas que confían en nosotros</h2>
-          <ul class="clients-list">
-            <li>KIA Automotor</li>
-            <li>MAPFRE Seguros</li>
-            <li>El Portón Gaucho</li>
-            <li>Meraki Restaurant</li>
-            <li>Pepe El Toro Transportes</li>
-            <li>Entidades del Estado</li>
-          </ul>
+          <button class="clients-toggle" type="button" aria-pressed="false" hidden>Pausar cinta</button>
+        </div>
+        <div class="clients-marquee">
+          <div class="clients-track">
+            <ul class="clients-list">
+              <li class="client-card">
+                <div class="client-logo"><img class="client-logo--kia" src="images/clients/kia.png" alt="" width="160" height="80" loading="lazy" /></div>
+                <span>KIA Automotor</span>
+              </li>
+              <li class="client-card">
+                <div class="client-logo"><img src="images/clients/mapfre.webp" alt="" width="160" height="80" loading="lazy" /></div>
+                <span>MAPFRE Seguros</span>
+              </li>
+              <li class="client-card">
+                <div class="client-logo client-logo--gaucho"><div class="client-logo__crop"><img src="images/clients/porton-gaucho-menu.jpg" alt="" width="768" height="1024" loading="lazy" /></div></div>
+                <span>El Portón Gaucho</span>
+              </li>
+              <li class="client-card">
+                <div class="client-logo client-logo--meraki"><img src="images/clients/meraki.jpg" alt="" width="200" height="200" loading="lazy" /></div>
+                <span>Meraki Restaurant</span>
+              </li>
+              <li class="client-card">
+                <!-- Símbolo provisional: sustituir cuando se confirme el logo de la empresa. -->
+                <div class="client-logo client-logo--placeholder"><svg viewBox="0 0 80 64" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"><path d="M7 14h40v34H7zM47 27h14l12 13v8H47M54 28v13h18M16 23h22M16 30h15"/><circle cx="21" cy="49" r="7" fill="#edf4f8"/><circle cx="60" cy="49" r="7" fill="#edf4f8"/></svg></div>
+                <span>Pepe El Toro Transportes</span>
+              </li>
+              <li class="client-card">
+                <div class="client-logo client-logo--placeholder"><svg viewBox="0 0 80 64" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"><path d="m40 8 30 14H10L40 8ZM14 28h52M14 51h52M10 57h60M20 28v23M33 28v23M47 28v23M60 28v23"/></svg></div>
+                <span>Entidades del Estado</span>
+              </li>
+            </ul>
+          </div>
         </div>
       </section>
 

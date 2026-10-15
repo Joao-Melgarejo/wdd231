@@ -40,3 +40,22 @@ const year = document.querySelector("#currentyear");
 if (year) {
   year.textContent = new Date().getFullYear();
 }
+
+// Duplicate a full group so the leftward loop has no visible reset.
+const clientsStrip = document.querySelector(".clients-strip");
+if (clientsStrip) {
+  const track = clientsStrip.querySelector(".clients-track");
+  const list = track.querySelector(".clients-list");
+  const pauseButton = clientsStrip.querySelector(".clients-toggle");
+  const copy = list.cloneNode(true);
+  copy.setAttribute("aria-hidden", "true");
+  copy.setAttribute("inert", "");
+  track.append(copy);
+  clientsStrip.classList.add("is-ready");
+  pauseButton.hidden = false;
+  pauseButton.addEventListener("click", () => {
+    const paused = clientsStrip.classList.toggle("is-paused");
+    pauseButton.setAttribute("aria-pressed", String(paused));
+    pauseButton.textContent = paused ? "Reanudar cinta" : "Pausar cinta";
+  });
+}
